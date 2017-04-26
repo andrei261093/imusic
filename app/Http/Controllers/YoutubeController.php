@@ -23,7 +23,7 @@ class YoutubeController extends Controller
     			$array = array(
     				"title" => $details['title'],
     				"description" =>$details['description'],
-    				"url" => "https://www.youtube.com/embed/" . $video->id->videoId
+    				"url" =>  $video->id->videoId
 
     			);
 

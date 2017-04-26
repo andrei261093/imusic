@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/home">Home</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,7 +42,7 @@
                         
                     </a>
                 </li>
-                <li><a href="">
+                <li><a href="#">
                         <i class="glyphicon glyphicon-music" aria-hidden="true"></i> My Songs
                         <span class="badge">2</span>
                     </a>
@@ -51,7 +51,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
                         @if(Auth::user())
-                            {{Auth::user()->firstName}} {{Auth::user()->lastName}}
+                            {{Auth::user()->name}} {{Auth::user()->lastName}}
                         @endif
                         @if(!Auth::user())
                                 <i class="fa fa-user" aria-hidden="true"></i> Users
@@ -61,16 +61,16 @@
                     @if(Auth::user())
                         <ul class="dropdown-menu">
 
-                            <li><a href="{{route('user.profile')}}">Profile</a></li>
+                            <li><a href="#">Profile</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{route('user.logout')}}">Logout</a></li>
+                            <li><a href="{{route('logout')}}">Logout</a></li>
 
                         </ul>
                     @endif
                     @if(!Auth::user())
                         <ul class="dropdown-menu">
-                            <li><a href="">Login</a></li>
-                            <li><a href="">Sign up</a></li>
+                            <li><a href="{{route('login')}}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Sign up</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="/about">About</a></li>
                         </ul>

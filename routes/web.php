@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
@@ -24,3 +24,25 @@ Route::get('/add-songs', [
 Route::get('/a', function () {
     return view('addVideos');
 });
+
+Auth::routes();
+
+Route::get('/logout', [
+    'uses' => 'HomeController@logout',
+    'as' => 'logout'
+]);
+
+Route::get('/bogdan', [
+    'uses' => 'HomeController@bogdan',
+    'as' => 'bogdan'
+]);
+
+Route::get('/addVideo', [
+    'uses' => 'HomeController@addVideo',
+    'as' => 'addVideo'
+]);
+
+Route::get('/mySongs/{videoID}', [
+    'uses' => 'HomeController@getMyVideos',
+    'as' => 'mySongs'
+]);

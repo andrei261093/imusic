@@ -1,0 +1,46 @@
+footer {
+    position:fixed;
+    bottom:0;
+    left:50%;
+    margin-left:-160px; /*negative half the width */
+    width:350px;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+body {
+    min-height: 400px;
+    margin-bottom: 50px;
+    margin-top: 0px;
+    clear: both;
+}
+
+
+
+
+body:before {
+    font-family: 'Open Sans', sans-serif;
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url("https://www.clipartsgram.com/image/44805940-music-wallpaper-hd-white-headphone-mac.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.thumbnail{
+    background-color:transparent;
+    border:0;
+    box-shadow:0;
+    border-radius:0;
+}
+
+.navbar {
+    opacity: 0.95;
+}
