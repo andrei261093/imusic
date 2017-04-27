@@ -51,10 +51,25 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
-    public function getMyVideos($videoID) {
+    public function songView($videoID) {
         $user = Auth::user();
         $videos = Videos::where('userID', $user->id)->get();
         
-        return view('mySongs', ['videoID' => $videoID, 'videos' => $videos]);
+        return view('songView', ['videoID' => $videoID, 'videos' => $videos]);
+    }
+
+    public function getMySongs() {
+        $user = Auth::user();
+        $videos = Videos::where('userID', $user->id)->get();
+        
+        return view('mySongs', ['videos' => $videos]);
+    }
+
+    public function search(Request $request){
+        $user = Auth::user();
+        $input = $request->input('input');
+        $videos = Videos::where('title','like', "%$input%")->where('userID', $user->id)->get();
+ 
+        return view('mySongs', ['videos' => $videos]);;
     }
 }

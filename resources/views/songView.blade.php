@@ -5,36 +5,24 @@
 @endsection
 
 @section('content') 
-
-
 <div class="col-md-12">
-
-	<div class="col-md-3">
-		<h3>Playlist</h3>
+	<div >
+		<center><iframe width="900" height="600" allowfullscreen src="https://www.youtube.com/embed/{{ $videoID }}"></iframe></center>
 	</div>
 	<center>
 		<div  class="col-md-12">
-	
-               
-          
-   
+			
 				<ul class="list-group">
-					@forelse ($videos as $video)
+					@foreach ($videos as $video)
 				  		<li class="list-group-item">
 				  		<a href="{{route('songView', [$video->videoId])}}">{{$video->title}}</a>
 				  		</li>
-				  	@empty
-               			<h1>No videos!</h1>
-				  	@endforelse
+				  	@endforeach
 				</ul>
-
-
-
-
 			
 		</div>	
 	</center>
-	
-</div>
+	.
+	</div>
 
 @endsection

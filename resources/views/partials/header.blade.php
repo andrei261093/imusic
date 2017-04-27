@@ -9,27 +9,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/home">Home</a>
+            <a class="navbar-brand" href="/home">iMusic</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">ComboBox<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        
-                            <li><a href="">option  1</a></li>
-                            <li><a href="">option  1</a></li>
-                        
-                        <li role="separator" class="divider"></li>
-                        <li><a href="">All</a></li>
-                    </ul>
-                </li>
             </ul>
-            <form action="" class="navbar-form navbar-left">
+            <form action="{{ route('search')}}" class="navbar-form navbar-left">
                 <div class="form-group">
                     <input type="text" id="input" name="input" class="typeahead form-control" placeholder="Search songs">
                 </div>
@@ -42,9 +29,9 @@
                         
                     </a>
                 </li>
-                <li><a href="#">
+                <li><a href="{{route('mySongs')}}">
                         <i class="glyphicon glyphicon-music" aria-hidden="true"></i> My Songs
-                        <span class="badge">2</span>
+                      
                     </a>
                 </li>
                 <li class="dropdown">
@@ -60,9 +47,6 @@
                         <span class="caret"></span></a>
                     @if(Auth::user())
                         <ul class="dropdown-menu">
-
-                            <li><a href="#">Profile</a></li>
-                            <li role="separator" class="divider"></li>
                             <li><a href="{{route('logout')}}">Logout</a></li>
 
                         </ul>
@@ -71,8 +55,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{route('login')}}">Login</a></li>
                             <li><a href="{{ route('register') }}">Sign up</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/about">About</a></li>
+                            
                         </ul>
                     @endif
 
@@ -83,13 +66,3 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-<script type="text/javascript">
-    var path = "";
-    $('input.typeahead').typeahead({
-        source: function (query, process) {
-            return $.get(path, { query : query }, function (data) {
-                return process(data);
-            } )
-        }
-    });
-</script>

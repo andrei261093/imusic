@@ -26,7 +26,7 @@
 		 	 					
 		 	 					<input class="form-control" type="hidden" name="title" value="{{ $video['title'] }}" />
 		 	 					<input class="form-control" type="hidden" name="url" value="{{ $video['url'] }}" />
-    							<button type="submit">Continue</button>
+    							<button type="submit">Save to playlist</button>
 							</form>
 
 		 	 				

@@ -44,3 +44,7 @@ body:before {
 .navbar {
     opacity: 0.95;
 }
+
+nav {
+    z-index: 999999;
+}
